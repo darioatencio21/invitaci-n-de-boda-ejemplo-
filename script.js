@@ -9,6 +9,7 @@
       page_title: 'Emily & Michael — Wedding Invitation',
       hero_phrase: 'Love wrote our story... now we want to share the most important chapter with you.',
       countdown_eyebrow: 'Counting down to the celebration',
+      event_date: 'November 24th, 2026',
       days_full: 'Days', hours_full: 'Hours', minutes_full: 'Minutes', seconds_full: 'Seconds',
       add_google: 'Google Calendar', add_apple: 'Apple Calendar',
       add_event_title: 'Emily & Michael — Wedding', add_event_details: 'Ceremony and reception',
@@ -62,6 +63,7 @@
       page_title: 'Emily & Michael — Invitación de Boda',
       hero_phrase: 'El amor escribió nuestra historia... ahora queremos compartir el capítulo más importante con ustedes.',
       countdown_eyebrow: 'Cuenta regresiva para la celebración',
+      event_date: '24 de noviembre de 2026',
       days_full: 'Días', hours_full: 'Horas', minutes_full: 'Minutos', seconds_full: 'Segundos',
       add_google: 'Google Calendar', add_apple: 'Calendario de Apple',
       add_event_title: 'Emily & Michael — Boda', add_event_details: 'Ceremonia y recepción',
@@ -283,24 +285,24 @@
     for (var j = 0; j < els.length; j++) observer.observe(els[j]);
   }
 
-  /* AUTUMN LEAVES */
+  /* ROSE PETALS */
   function initPetals() {
     var container = document.getElementById('petalsContainer');
     if (!container) return;
-    var colors = ['#C94A1E','#E67E22','#D2691E','#B8860B','#D4A017','#C0392B'];
-    var shapes = ['M8 1 C11 4 13 8 12.5 12 C12 15 10 18 8 20 C6 18 4 15 3.5 12 C3 8 5 4 8 1Z','M8 1 C13 4 15 10 13 15 C12 18 10 20 8 20 C6 20 4 18 3 15 C1 10 3 4 8 1Z','M8 1 C12 5 13 10 11 14 C10 16 9 18 8 20 C7 18 6 16 5 14 C3 10 4 5 8 1Z'];
-    createPetals(container, colors, shapes, 14);
-    setInterval(function () { if (container.children.length < 22) createPetal(container, colors, shapes); }, 2500);
+    var colors = ['#F5C6D0','#E89AB0','#D97B9B','#C97896','#F0D5DE','#E4709A'];
+    var shapes = ['M8 1 C11 4 12.5 8 12 13 C11.5 16 10 18.5 8 20 C6 18.5 4.5 16 4 13 C3.5 8 5 4 8 1Z','M8 1 C13 5 15 11 13 16 C12 18.5 10 20 8 20 C6 20 4 18.5 3 16 C1 11 3 5 8 1Z','M8 0 C10 3 12 8 11 14 C10 17 9 19 8 20 C7 19 6 17 5 14 C4 8 6 3 8 0Z'];
+    createPetals(container, colors, shapes, 8);
+    setInterval(function () { if (container.children.length < 14) createPetal(container, colors, shapes); }, 4000);
   }
 
-  /* DEEP AUTUMN LEAVES */
+  /* DEEP ROSE PETALS */
   function initBrownPetals() {
     var container = document.getElementById('petalsBrown');
     if (!container) return;
-    var colors = ['#8B4513','#A0522D','#B22222','#9C4A1C','#C0392B','#6B4226'];
-    var shapes = ['M8 1 C11 4 13 8 12.5 12 C12 15 10 18 8 20 C6 18 4 15 3.5 12 C3 8 5 4 8 1Z','M8 1 C13 4 15 10 13 15 C12 18 10 20 8 20 C6 20 4 18 3 15 C1 10 3 4 8 1Z','M8 1 C12 5 13 10 11 14 C10 16 9 18 8 20 C7 18 6 16 5 14 C3 10 4 5 8 1Z'];
-    for (var i = 0; i < 8; i++) setTimeout(function () { createPetal(container, colors, shapes); }, i * 650);
-    setInterval(function () { if (container.children.length < 14) createPetal(container, colors, shapes); }, 3500);
+    var colors = ['#B03A5B','#922B4D','#A63D63','#C05780','#8E2444','#D15B8A'];
+    var shapes = ['M8 1 C11 4 12.5 8 12 13 C11.5 16 10 18.5 8 20 C6 18.5 4.5 16 4 13 C3.5 8 5 4 8 1Z','M8 1 C13 5 15 11 13 16 C12 18.5 10 20 8 20 C6 20 4 18.5 3 16 C1 11 3 5 8 1Z','M8 0 C10 3 12 8 11 14 C10 17 9 19 8 20 C7 19 6 17 5 14 C4 8 6 3 8 0Z'];
+    for (var i = 0; i < 5; i++) setTimeout(function () { createPetal(container, colors, shapes); }, i * 650);
+    setInterval(function () { if (container.children.length < 9) createPetal(container, colors, shapes); }, 5000);
   }
 
   function createPetals(container, colors, shapes, count) {
@@ -316,7 +318,7 @@
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('d', shapes[Math.floor(Math.random() * shapes.length)]);
     path.setAttribute('fill', colors[Math.floor(Math.random() * colors.length)]);
-    path.setAttribute('opacity', String(0.3 + Math.random() * 0.3));
+    path.setAttribute('opacity', String(0.18 + Math.random() * 0.22));
     svg.appendChild(path);
     svg.style.left = Math.random() * 100 + '%';
     svg.style.animationDuration = (9 + Math.random() * 13) + 's';

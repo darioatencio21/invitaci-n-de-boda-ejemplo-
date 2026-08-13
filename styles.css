@@ -159,6 +159,8 @@ body.video-locked {
 .panel-cream { background: var(--bg-secondary); text-align: center; }
 
 /* COUNTDOWN MODERN */
+.countdown__date { font-family: var(--font-script); font-size: clamp(28px, 7vw, 38px); font-weight: 400; color: var(--gold-light); text-align: center; line-height: 1.2; margin: -12px 0 26px; text-shadow: 0 0 18px rgba(212,185,140,0.5), 0 2px 8px rgba(0,0,0,0.4); }
+.countdown__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 30px; }
 .countdown-modern { display: flex; justify-content: center; gap: 20px; }
 .cm-item { display: flex; flex-direction: column; align-items: center; position: relative; width: 80px; }
 .cm-ring { width: 80px; height: 80px; position: relative; margin-bottom: -10px; }
@@ -179,6 +181,8 @@ body.video-locked {
 .btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 28px rgba(139,94,52,0.25); }
 .btn:active { transform: translateY(0) scale(0.98); }
 .btn--accent { background: var(--bronze-main); color: var(--bg-primary); }
+.btn--gold { background: linear-gradient(135deg, #E5CFA5, #D4B98C 55%, #B8965A); color: var(--bronze-dark); box-shadow: 0 4px 18px rgba(212,185,140,0.35); }
+.btn--gold:hover { box-shadow: 0 10px 30px rgba(212,185,140,0.5); }
 .btn--sm { padding: 10px 20px; font-size: 11px; letter-spacing: 1px; }
 .btn__icon { flex-shrink: 0; }
 
@@ -252,13 +256,11 @@ body.video-locked {
 
 /* z-index 3: Phrase */
 .hero__phrase {
-  font-family: var(--font-serif); font-style: italic; font-size: 15px;
-  color: #FFFFFF; text-align: center; max-width: 80%;
+  font-family: var(--font-serif); font-style: italic; font-size: clamp(17px, 4.5vw, 20px);
+  color: #FFFFFF; text-align: center; max-width: 88%;
   margin: 16px auto; padding: 0 16px; line-height: 1.6;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
-}
-  margin: 20px auto; line-height: 1.6; position: relative; z-index: 3;
-  text-shadow: 0 1px 4px rgba(250, 243, 231, 0.8);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.5);
+  position: relative; z-index: 3;
 }
 
 /* z-index 3: Divider */
@@ -268,7 +270,6 @@ body.video-locked {
 
 /* Button in hero */
 .hero .btn { position: relative; z-index: 2; margin-bottom: 0; }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; position: relative; z-index: 2; margin-bottom: 48px; }
 
 /* SECTION TYPOGRAPHY */
 .section { position: relative; margin-bottom: 0; padding: 48px 28px; }
@@ -526,6 +527,7 @@ body.video-locked {
   .video-overlay__skip { bottom: 28px; right: 16px; padding: 10px 20px; font-size: 11px; }
   .video-overlay__sound { bottom: 28px; left: 16px; width: 38px; height: 38px; }
   .hotel__actions .btn { flex: 1 1 100%; justify-content: center; }
+  .countdown__actions .btn { flex: 1 1 100%; justify-content: center; }
   .dresscode__img { max-width: 150px; }
   .parents-grid { grid-template-columns: 1fr; gap: 20px; }
   .wedding-party .wp-columns { grid-template-columns: 1fr; gap: 32px; }
