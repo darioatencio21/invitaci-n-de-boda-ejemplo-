@@ -52,9 +52,12 @@
       rsvp_no: "Can't make it",
       rsvp_dietary: 'Dietary restrictions (optional)',
       rsvp_message: 'A message for the couple (optional)',
+      rsvp_song: 'What song will get you on the dance floor? (optional)',
       rsvp_send: 'Send confirmation',
       rsvp_done: 'Thank you!',
       rsvp_done_text: 'Your confirmation has been sent. We can\'t wait to see you.',
+      shuttle_title: 'Shuttle to the venue',
+      shuttle_desc: 'We\'ll have shuttle service from the hotel to the venue and back. Check the schedules at the hotel reception.',
       footer_tagline: 'With love, Emily & Michael',
       wp_age_6: '(6 years old)', wp_age_5: '(5 years old)'
     },
@@ -106,9 +109,12 @@
       rsvp_no: 'No podré asistir',
       rsvp_dietary: 'Restricciones alimentarias (opcional)',
       rsvp_message: 'Un mensaje para los novios (opcional)',
+      rsvp_song: '¿Qué canción te hará salir a la pista de baile? (opcional)',
       rsvp_send: 'Enviar confirmación',
       rsvp_done: '¡Gracias!',
       rsvp_done_text: 'Tu confirmación ha sido enviada. Te esperamos.',
+      shuttle_title: 'Transporte a la hacienda',
+      shuttle_desc: 'Contaremos con servicio de transporte desde el hotel hasta el lugar del evento y de regreso. Consulta los horarios en recepción del hotel.',
       footer_tagline: 'Con amor, Emily & Michael',
       wp_age_6: '(6 años)', wp_age_5: '(5 años)'
     }
@@ -438,6 +444,7 @@
     var success = document.getElementById('rsvpSuccess');
     var guestsRow = document.getElementById('rsvpGuests');
     var dietaryRow = document.getElementById('rsvpDietary');
+    var songRow = document.getElementById('rsvpSong');
     if (!form) return;
 
     var radios = form.querySelectorAll('input[name="attendance"]');
@@ -447,7 +454,8 @@
         var show = yes && yes.value === 'yes';
         guestsRow.classList[show ? 'add' : 'remove']('rsvp-form__cond--visible');
         dietaryRow.classList[show ? 'add' : 'remove']('rsvp-form__cond--visible');
-        if (!show) { document.getElementById('guestCount').value = '1'; document.getElementById('dietaryRestrictions').value = ''; }
+        if (songRow) songRow.classList[show ? 'add' : 'remove']('rsvp-form__cond--visible');
+        if (!show) { document.getElementById('guestCount').value = '1'; document.getElementById('dietaryRestrictions').value = ''; document.getElementById('songRequest').value = ''; }
       });
     }
 
@@ -456,20 +464,26 @@
       var nameEl = document.getElementById('guestName');
       var dietEl = document.getElementById('dietaryRestrictions');
       var msgEl = document.getElementById('messageToCouple');
+      var songEl = document.getElementById('songRequest');
 
       var name = sanitize(nameEl.value).slice(0, 20);
       var diet = sanitize(dietEl.value).slice(0, 100);
       var msg = sanitize(msgEl.value).slice(0, 150);
+      var song = sanitize(songEl.value).slice(0, 80);
 
       nameEl.value = name;
       dietEl.value = diet;
       msgEl.value = msg;
+      songEl.value = song;
 
       if (!name) return;
       form.style.display = 'none';
       success.style.display = 'block';
+
     });
   }
+
+
 
   /* MUSIC TOGGLE */
   function initMusic() {
