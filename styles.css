@@ -222,7 +222,7 @@ body.video-locked {
 
 /* z-index 3: Names */
 .hero-names {
-  position: relative; z-index: 2; padding: 32px 20px; margin: 0 auto; max-width: 90%;
+  position: relative; z-index: 2; padding: 32px 20px; margin: 170px auto 0; max-width: 90%;
 }
 .hero__name {
   display: block; font-family: var(--font-script); font-size: clamp(42px, 13vw, 64px);
@@ -576,7 +576,7 @@ body.video-locked {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   color: #6b5b52;
 }
 
