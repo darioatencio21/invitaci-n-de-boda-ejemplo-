@@ -115,7 +115,7 @@ body.video-locked {
 
 /* PETALS */
 .petals-container, .petals-brown { position: fixed; inset: 0; pointer-events: none; z-index: 3; overflow: hidden; }
-.petal { position: absolute; top: -40px; opacity: 0; pointer-events: none; animation: petalFall linear forwards; }
+.petal { position: absolute; top: -40px; opacity: 0; pointer-events: none; animation: petalFall linear forwards; filter: drop-shadow(0 2px 3px rgba(74, 46, 29, 0.18)); }
 @keyframes petalFall {
   0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
   5% { opacity: 0.85; } 90% { opacity: 0.6; }
@@ -268,6 +268,18 @@ body.video-locked {
 .hero__divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-main), transparent); }
 .hero__divider-dot { font-size: 14px; color: var(--gold-main); flex-shrink: 0; }
 
+/* z-index 3: Date */
+.hero__date {
+  position: relative; z-index: 3; text-align: center; font-family: var(--font-script);
+  font-size: clamp(26px, 6.5vw, 36px); font-weight: 400; line-height: 1.2; letter-spacing: 2px;
+  margin: 20px auto 0;
+  background: linear-gradient(120deg, #F8E7C1 0%, #E8C98C 25%, #D4B98C 50%, #B8965A 75%, #F8E7C1 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: nameGradient 7s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+}
+
 /* Button in hero */
 .hero .btn { position: relative; z-index: 2; margin-bottom: 0; }
 
@@ -332,6 +344,7 @@ body.video-locked {
 .parents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 420px; margin: 20px auto 0; }
 .parents-col { text-align: center; }
 .parents-col__side { font-family: var(--font-sans); font-size: 12px; color: var(--gold-light); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; animation: textGlow 2.4s ease-in-out infinite alternate; }
+.parents-col__subtitle { font-family: var(--font-sans); font-size: 10px; color: var(--gold-accent); text-transform: uppercase; letter-spacing: 2px; font-weight: 500; margin: 14px 0 4px; }
 .parents-col__names { font-family: var(--font-serif); font-size: 17px; line-height: 1.5; color: #FDF6EC; font-weight: 600; animation: textGlow 2.4s ease-in-out infinite alternate; }
 @keyframes textGlow {
   0% { text-shadow: 0 0 4px rgba(212,185,140,0.3), 0 0 8px rgba(212,185,140,0.15); }

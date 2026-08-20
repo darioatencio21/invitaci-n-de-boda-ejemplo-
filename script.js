@@ -8,8 +8,7 @@
       skip: 'Skip',
       page_title: 'Emily & Michael — Wedding Invitation',
       hero_phrase: 'Love wrote our story... now we want to share the most important chapter with you.',
-      countdown_eyebrow: 'Counting down to the celebration',
-      event_date: 'November 24th, 2026',
+      countdown_eyebrow: 'Counting down to our celebration',
       days_full: 'Days', hours_full: 'Hours', minutes_full: 'Minutes', seconds_full: 'Seconds',
       add_google: 'Google Calendar', add_apple: 'Apple Calendar',
       add_event_title: 'Emily & Michael — Wedding', add_event_details: 'Ceremony and reception',
@@ -25,12 +24,12 @@
       wp_groomsmen: 'Groomsmen',
       wp_groomsman: 'Groomsman',
       wp_children: 'Little Ones',
-      wp_page: 'Page Boy',
+      wp_page: 'Ring Bearer',
       wp_flower_girl: 'Flower Girl',
       itinerary_title: 'Itinerary', itinerary_subtitle: 'Here are some moments we\'ll share together',
-      ceremony_title: 'Ceremony', ceremony_desc: 'The moment it all begins',
-      reception_title: 'Reception', reception_desc: 'Welcome cocktails & toast',
-      party_title: 'Dinner & Dancing', party_desc: 'We celebrate until dawn',
+      ceremony_title: 'Ceremony', ceremony_desc: 'The moment it all begins — Emily & Michael exchange their vows under the Napa Valley sky.',
+      reception_title: 'Reception', reception_desc: 'Welcome cocktails and a heartfelt toast as we celebrate the newlyweds.',
+      party_title: 'Dinner & Dancing', party_desc: 'Dinner, music and dancing — we celebrate with joy until the last dance.',
       dresscode_title: 'Dress Code', dresscode_subtitle: 'Formal · Elegant',
       dresscode_note: 'Light colors and earth tones.<br>(Please avoid white.)',
       ceremony_detail_title: 'Ceremony', ceremony_detail_text: 'Join us at 5:00 PM to share this moment.',
@@ -39,6 +38,9 @@
       parents_title: 'Our Families',
       parents_bride: 'Bride\'s Family',
       parents_groom: 'Groom\'s Family',
+      parents_label: 'Parents',
+      siblings_label: 'Siblings',
+      hotel_title: 'Where to Stay',
       hotel_meta: '4 stars · 10 min from the venue',
       hotel_map: 'View location',
       gifts_title: 'Gifts',
@@ -58,15 +60,13 @@
       rsvp_done_text: 'Your confirmation has been sent. We can\'t wait to see you.',
       shuttle_title: 'Shuttle to the venue',
       shuttle_desc: 'We\'ll have shuttle service from the hotel to the venue and back. Check the schedules at the hotel reception.',
-      footer_tagline: 'With love, Emily & Michael',
-      wp_age_6: '(6 years old)', wp_age_5: '(5 years old)'
+      footer_tagline: 'With love, Emily & Michael'
     },
     es: {
       skip: 'Saltar',
       page_title: 'Emily & Michael — Invitación de Boda',
       hero_phrase: 'El amor escribió nuestra historia... ahora queremos compartir el capítulo más importante con ustedes.',
-      countdown_eyebrow: 'Cuenta regresiva para la celebración',
-      event_date: '24 de noviembre de 2026',
+      countdown_eyebrow: 'Cuenta regresiva para nuestra celebración',
       days_full: 'Días', hours_full: 'Horas', minutes_full: 'Minutos', seconds_full: 'Segundos',
       add_google: 'Google Calendar', add_apple: 'Calendario de Apple',
       add_event_title: 'Emily & Michael — Boda', add_event_details: 'Ceremonia y recepción',
@@ -82,12 +82,12 @@
       wp_groomsmen: 'Padrinos de Anillo',
       wp_groomsman: 'Padrino de Anillo',
       wp_children: 'Pequeños de la Ceremonia',
-      wp_page: 'Paje',
+      wp_page: 'Portador del anillo',
       wp_flower_girl: 'Florista',
       itinerary_title: 'Itinerario de la noche', itinerary_subtitle: 'Estos son algunos momentos que vamos a compartir',
-      ceremony_title: 'Ceremonia', ceremony_desc: 'El momento en que todo comienza',
-      reception_title: 'Recepción', reception_desc: 'Cóctel de bienvenida y brindis',
-      party_title: 'Cena y fiesta', party_desc: 'Celebramos hasta el amanecer',
+      ceremony_title: 'Ceremonia', ceremony_desc: 'El momento en que todo comienza: Emily & Michael intercambian sus votos bajo el cielo de Napa Valley.',
+      reception_title: 'Recepción', reception_desc: 'Cóctel de bienvenida y un brindis con mucho cariño para celebrar a los recién casados.',
+      party_title: 'Cena y fiesta', party_desc: 'Cena, música y baile: celebramos con alegría hasta el último baile.',
       dresscode_title: 'Dress Code', dresscode_subtitle: 'Formal · Elegante',
       dresscode_note: 'Colores claros y tonos tierra.<br>(Evitar el blanco.)',
       ceremony_detail_title: 'Ceremonia', ceremony_detail_text: 'Te esperamos a las 17:00 hs para compartir este momento.',
@@ -96,6 +96,9 @@
       parents_title: 'Nuestras Familias',
       parents_bride: 'Familia de la Novia',
       parents_groom: 'Familia del Novio',
+      parents_label: 'Padres',
+      siblings_label: 'Hermanos',
+      hotel_title: 'Dónde Quedarse',
       hotel_meta: '4 estrellas · a 10 min del salón',
       hotel_map: 'Ver ubicación',
       gifts_title: 'Regalos',
@@ -115,8 +118,7 @@
       rsvp_done_text: 'Tu confirmación ha sido enviada. Te esperamos.',
       shuttle_title: 'Transporte a la hacienda',
       shuttle_desc: 'Contaremos con servicio de transporte desde el hotel hasta el lugar del evento y de regreso. Consulta los horarios en recepción del hotel.',
-      footer_tagline: 'Con amor, Emily & Michael',
-      wp_age_6: '(6 años)', wp_age_5: '(5 años)'
+      footer_tagline: 'Con amor, Emily & Michael'
     }
   };
 
@@ -291,22 +293,22 @@
     for (var j = 0; j < els.length; j++) observer.observe(els[j]);
   }
 
-  /* ROSE PETALS */
+  /* WHITE PETALS */
   function initPetals() {
     var container = document.getElementById('petalsContainer');
     if (!container) return;
-    var colors = ['#F5C6D0','#E89AB0','#D97B9B','#C97896','#F0D5DE','#E4709A'];
-    var shapes = ['M8 1 C11 4 12.5 8 12 13 C11.5 16 10 18.5 8 20 C6 18.5 4.5 16 4 13 C3.5 8 5 4 8 1Z','M8 1 C13 5 15 11 13 16 C12 18.5 10 20 8 20 C6 20 4 18.5 3 16 C1 11 3 5 8 1Z','M8 0 C10 3 12 8 11 14 C10 17 9 19 8 20 C7 19 6 17 5 14 C4 8 6 3 8 0Z'];
+    var colors = ['#FFFFFF','#FEFDFB','#FCFAF6','#F8F4EC','#F5EFE3','#EFE7D8'];
+    var shapes = ['M8 2 C12 4 14 9 13 13 C12.5 16 10 19.5 8 20 C6 19.5 3.5 16 3 13 C2 9 4 4 8 2Z','M8 1 C13 3 15.5 9 14.5 14 C14 17.5 11 20 8 20 C5 20 2 17.5 1.5 14 C0.5 9 3 3 8 1Z','M8 0.5 C11 3 12.5 8 12 13.5 C11.6 16.5 10 19 8 20 C6 19 4.4 16.5 4 13.5 C3.5 8 5 3 8 0.5Z'];
     createPetals(container, colors, shapes, 8);
     setInterval(function () { if (container.children.length < 14) createPetal(container, colors, shapes); }, 4000);
   }
 
-  /* DEEP ROSE PETALS */
+  /* DEEP WHITE PETALS */
   function initBrownPetals() {
     var container = document.getElementById('petalsBrown');
     if (!container) return;
-    var colors = ['#B03A5B','#922B4D','#A63D63','#C05780','#8E2444','#D15B8A'];
-    var shapes = ['M8 1 C11 4 12.5 8 12 13 C11.5 16 10 18.5 8 20 C6 18.5 4.5 16 4 13 C3.5 8 5 4 8 1Z','M8 1 C13 5 15 11 13 16 C12 18.5 10 20 8 20 C6 20 4 18.5 3 16 C1 11 3 5 8 1Z','M8 0 C10 3 12 8 11 14 C10 17 9 19 8 20 C7 19 6 17 5 14 C4 8 6 3 8 0Z'];
+    var colors = ['#FDFCF9','#FAF7F0','#F4EDDF','#ECE3D2','#F8F4EC','#E4D9C4'];
+    var shapes = ['M8 2 C12 4 14 9 13 13 C12.5 16 10 19.5 8 20 C6 19.5 3.5 16 3 13 C2 9 4 4 8 2Z','M8 1 C13 3 15.5 9 14.5 14 C14 17.5 11 20 8 20 C5 20 2 17.5 1.5 14 C0.5 9 3 3 8 1Z','M8 0.5 C11 3 12.5 8 12 13.5 C11.6 16.5 10 19 8 20 C6 19 4.4 16.5 4 13.5 C3.5 8 5 3 8 0.5Z'];
     for (var i = 0; i < 5; i++) setTimeout(function () { createPetal(container, colors, shapes); }, i * 650);
     setInterval(function () { if (container.children.length < 9) createPetal(container, colors, shapes); }, 5000);
   }
@@ -321,17 +323,46 @@
     svg.setAttribute('width', String(18 + Math.random() * 16));
     svg.setAttribute('height', String(22 + Math.random() * 18));
     svg.setAttribute('viewBox', '0 0 16 20');
+    svg.setAttribute('aria-hidden', 'true');
+
+    var gradId = 'petalGrad' + Math.floor(Math.random() * 1e9);
+    var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    var grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    grad.setAttribute('id', gradId);
+    grad.setAttribute('x1', '30%'); grad.setAttribute('y1', '0%');
+    grad.setAttribute('x2', '70%'); grad.setAttribute('y2', '100%');
+    var c = colors[Math.floor(Math.random() * colors.length)];
+    var stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop1.setAttribute('offset', '0%'); stop1.setAttribute('stop-color', '#FFFFFF');
+    var stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop2.setAttribute('offset', '65%'); stop2.setAttribute('stop-color', c);
+    var stop3 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop3.setAttribute('offset', '100%'); stop3.setAttribute('stop-color', '#DCCDB4');
+    grad.appendChild(stop1); grad.appendChild(stop2); grad.appendChild(stop3);
+    defs.appendChild(grad);
+    svg.appendChild(defs);
+
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('d', shapes[Math.floor(Math.random() * shapes.length)]);
-    path.setAttribute('fill', colors[Math.floor(Math.random() * colors.length)]);
-    path.setAttribute('opacity', String(0.18 + Math.random() * 0.22));
+    path.setAttribute('fill', 'url(#' + gradId + ')');
+    path.setAttribute('stroke', 'rgba(184,150,90,0.4)');
+    path.setAttribute('stroke-width', '0.45');
+    path.setAttribute('opacity', String(0.6 + Math.random() * 0.3));
     svg.appendChild(path);
+
+    var vein = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    vein.setAttribute('d', 'M8 3 C8.8 7 8.7 13 8 19');
+    vein.setAttribute('fill', 'none');
+    vein.setAttribute('stroke', 'rgba(255,255,255,0.75)');
+    vein.setAttribute('stroke-width', '0.5');
+    vein.setAttribute('opacity', '0.55');
+    svg.appendChild(vein);
+
     svg.style.left = Math.random() * 100 + '%';
     svg.style.animationDuration = (9 + Math.random() * 13) + 's';
     svg.style.animationDelay = Math.random() * 12 + 's';
     svg.style.setProperty('--drift', ((Math.random() - 0.5) * 160) + 'px');
     svg.style.setProperty('--spin', ((Math.random() - 0.5) * 720) + 'deg');
-    svg.style.transform = 'scale(' + (0.7 + Math.random() * 0.9) + ')';
     container.appendChild(svg);
     svg.addEventListener('animationend', function () { if (svg.parentNode) svg.parentNode.removeChild(svg); });
   }
